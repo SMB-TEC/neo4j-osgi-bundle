@@ -12,7 +12,7 @@
 	</organization>
 
 	<properties>
-		<neo4j.version>2.0.0-M06</neo4j.version>
+		<neo4j.version>2.0.0-RC1</neo4j.version>
 	</properties>
 
 	<dependencies>
