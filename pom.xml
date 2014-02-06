@@ -4,7 +4,7 @@
 	<groupId>org.neo4j</groupId>
 	<artifactId>neo4j-community</artifactId>
 	<name>Neo4j GraphDB - OSGi Bundle</name>
-	<version>2.0.0</version>
+	<version>2.0.1</version>
 	<packaging>bundle</packaging>
 
 	<organization>
@@ -12,7 +12,7 @@
 	</organization>
 
 	<properties>
-		<neo4j.version>2.0.0</neo4j.version>
+		<neo4j.version>2.0.1</neo4j.version>
 	</properties>
 
 	<dependencies>
