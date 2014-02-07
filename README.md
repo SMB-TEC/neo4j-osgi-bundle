@@ -5,7 +5,15 @@
 
 Creates a "super bundle" containing the Neo4j Community Edition. It is just a library bundle. We did not add any additional OSGi service nor removed any stuff. It's up to you to start the database.
 
-### Missing Dependencies? ###
+### Build
+
+Start the Maven build on command line
+
+	mvn -f clean package
+
+it will produce `target/neo4j-community-<VERSION>.jar` that contains Neo4j Community Edition as OSGi bundle. 
+
+### Missing Dependencies?
 
 We decided not to include several libraries from the "org.apache" namespace. Goto Eclipse Orbit and download/install them from this updatesite:
 
