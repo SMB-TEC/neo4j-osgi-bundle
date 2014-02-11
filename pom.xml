@@ -27,6 +27,12 @@
 			<version>${neo4j.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-kernel</artifactId>
+			<classifier>tests</classifier>
+			<version>${neo4j.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
@@ -56,7 +62,7 @@
 				<configuration>
 					<instructions>
 						<Import-Package>!com.sun.*,!sun.*,scala.*;resolution:="optional",org.codehaus.*;resolution:="optional",groovy.*;resolution:="optional",javax.servlet.*;resolution:="optional",javax.jms.*;resolution:="optional",javax.mail.*;resolution:="optional",org.osgi.service.blueprint.*;version="[1.0.0,2.0.0)";resolution:="optional",org.apache.avalon.framework.logge
-							r;resolution:="optional",org.apache.commons.codec.*;resolution:="optional",org.apache.commons.jxpath.*;resolution:="optional",org.apache.log.*;resolution:="optional",org.apache.log4j.*;resolution:="optional",org.apache.tools.ant.*;resolution:="optional",*</Import-Package>
+							r;resolution:="optional",org.apache.commons.codec.*;resolution:="optional",org.apache.commons.jxpath.*;resolution:="optional",org.apache.log.*;resolution:="optional",org.apache.log4j.*;resolution:="optional",org.apache.tools.ant.*;resolution:="optional",org.powermock.*;resolution:="optional",org.mockito.*;resolution:="optional",*</Import-Package>
 						<_exportcontents>org.neo4j.*;version="${neo4j.version}";-split-package:=merge-first,javax.*,org.apache.*</_exportcontents>
 						<Private-Package>ch.qos.logback.*</Private-Package>
 						<Embed-Dependency>*;scope=compile|runtime;type=!pom</Embed-Dependency>
