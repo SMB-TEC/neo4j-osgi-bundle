@@ -1,14 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.neo4j</groupId>
+
+    <groupId>com.smb-tec.neo4j</groupId>
     <artifactId>neo4j-community</artifactId>
     <name>Neo4j GraphDB - OSGi Bundle</name>
     <version>2.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <organization>
-        <name>Neo Technologies, Inc.</name>
+        <name>SMB GmbH</name>
+        <url>http://www.smb-tec.com/en</url>
     </organization>
 
     <properties>
@@ -32,12 +34,12 @@
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j</artifactId>
-            <version>${neo4j.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>server-api</artifactId>
-            <version>${neo4j.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -79,16 +81,68 @@
                     </instructions>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <useReleaseProfile>true</useReleaseProfile>
+                    <goals>deploy</goals>
+                    <arguments>-DskipTests -Dinvoker.skip=true -Psonatype-oss-release</arguments>
+                </configuration>
+            </plugin>
         </plugins>
+
     </build>
+
+    <developers>
+        <developer>
+            <organization>SMB GmbH</organization>
+            <name>Lars Martin</name>
+            <email>lars.martin@smb-tec.com</email>
+        </developer>
+    </developers>
+
     <scm>
         <url>git@github.com:BluWings/neo4j-osgi-bundle.git</url>
         <connection>scm:git:git@github.com:BluWings/neo4j-osgi-bundle.git</connection>
         <developerConnection>scm:git:git@github.com:BluWings/neo4j-osgi-bundle.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
+
     <issueManagement>
         <system>GitHub Issues</system>
         <url>https://github.com/BluWings/neo4j-osgi-bundle/issues</url>
     </issueManagement>
+
     <url>http://www.github.com/BluWings/neo4j-osgi-bundle</url>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
+    <description>This project provides an OSGi compatible bundle artifact of the Neo4j Database.</description>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
