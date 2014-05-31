@@ -1,7 +1,7 @@
 ## Neo4j OSGI Bundle
 
 
-### Neo4j Version: 2.1-SNAPSHOT Community
+### Neo4j Version: 2.2-SNAPSHOT Community
 
 Creates a "super bundle" containing the Neo4j Community Edition. It is just a library bundle. We did not add any additional OSGi service nor removed any stuff. It's up to you to start the database.
 
