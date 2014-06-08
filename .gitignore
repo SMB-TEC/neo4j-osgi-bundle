@@ -4,3 +4,11 @@
 *.jar
 *.war
 *.ear
+
+# Maven build artifacts
+/target/
+
+# Ignore eclipse project files and directories generated from the pom.xml by m2e
+/.classpath
+/.project
+/.settings/
