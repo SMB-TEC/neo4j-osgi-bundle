@@ -4,7 +4,7 @@
     <groupId>com.smb-tec.neo4j</groupId>
     <artifactId>neo4j-community</artifactId>
     <name>Neo4j GraphDB - OSGi Bundle</name>
-    <version>2.2-SNAPSHOT</version>
+    <version>2.1.2</version>
     <packaging>bundle</packaging>
 
     <organization>
@@ -69,9 +69,9 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Import-Package>!com.sun.*,!sun.*,scala.*;resolution:="optional",org.codehaus.*;resolution:="optional",groovy.*;resolution:="optional",javax.servlet.*;resolution:="optional",javax.jms.*;resolution:="optional",javax.mail.*;resolution:="optional",org.osgi.service.blueprint.*;version="[1.0.0,2.0.0)";resolution:="optional",org.apache.avalon.framework.logger;resolution:="optional",org.apache.commons.codec.*;resolution:="optional",org.apache.commons.jxpath.*;resolution:="optional",org.apache.log.*;resolution:="optional",org.apache.log4j.*;resolution:="optional",org.apache.tools.ant.*;resolution:="optional",*</Import-Package>
-                        <_exportcontents>org.neo4j.*;version="${neo4j.version}";-split-package:=merge-first,javax.*,org.apache.*</_exportcontents>
-                        <Private-Package>ch.qos.logback.*</Private-Package>
+                        <Import-Package>!com.sun.*,!sun.*,javax.servlet.*;resolution:="optional",javax.mail.*;resolution:="optional",org.apache.avalon.framework.logger;resolution:="optional",org.apache.commons.codec.*;resolution:="optional",org.apache.commons.jxpath.*;resolution:="optional",org.apache.tools.ant.*;resolution:="optional",*</Import-Package>
+                        <Bundle-RequiredExecutionEnvironment>JavaSE-1.7</Bundle-RequiredExecutionEnvironment>
+                        <_exportcontents>org.neo4j.*;-split-package:=merge-first</_exportcontents>
                         <Embed-Dependency>*;scope=compile|runtime;type=!pom</Embed-Dependency>
                         <Include-Resource>{maven-dependencies}</Include-Resource>
                         <Bundle-Vendor>${project.organization.name}</Bundle-Vendor>
