@@ -49,6 +49,36 @@
             <artifactId>server-api</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.10</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -62,7 +92,8 @@
                     <instructions>
                         <_exportcontents>org.neo4j.*;-split-package:=merge-first</_exportcontents>
 
-                        <Import-Package>!com.sun.*,!sun.*,javax.servlet.*;resolution:="optional",org.apache.log.*;resolution:="optional",org.apache.avalon.framework.logger;resolution:="optional",org.apache.commons.codec.*;resolution:="optional",org.apache.commons.jxpath.*;resolution:="optional",*</Import-Package>
+                        <Import-Package>!com.sun.*,!sun.*,*;resolution:="optional"</Import-Package>
+                        <Export-Package>org.neo4j.*.internal*;x-internal:=true;version="${project.version}",org.neo4j.*.impl*;x-internal:=true;version="${project.version}",org.neo4j.*;version="${project.version}"</Export-Package>
                         <Bundle-RequiredExecutionEnvironment>JavaSE-1.7</Bundle-RequiredExecutionEnvironment>
                         <Embed-Dependency>*;scope=compile|runtime;type=!pom</Embed-Dependency>
                         <Include-Resource>{maven-dependencies}</Include-Resource>

@@ -1,7 +1,7 @@
 ## Neo4j OSGI Bundle
 
 
-### Neo4j Version: 2.2-SNAPSHOT Community
+### Neo4j Version: 2.3.7 Community
 
 Creates a "super bundle" containing the Neo4j Community Edition. It is just a library bundle. We did not add any additional OSGi service nor removed any stuff. It's up to you to start the database.
 
@@ -9,12 +9,16 @@ Creates a "super bundle" containing the Neo4j Community Edition. It is just a li
 
 Start the Maven build on command line
 
-	mvn clean package
+    mvn clean package
 
-it will produce `target/neo4j-community-<VERSION>.jar` that contains Neo4j Community Edition as OSGi bundle. 
+it will produce `target/neo4j-community-<VERSION>.jar` that contains Neo4j Community Edition as OSGi bundle.
 
 ### Missing Dependencies?
 
 We decided not to include several libraries from the "org.apache" namespace. Goto Eclipse Orbit and download/install them from this updatesite:
 
 [http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/](http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/ "http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/")
+
+### Searching for Eclipse P2 Repository aka Updatesite?
+
+See [https://github.com/SMB-TEC/neo4j-p2-repository](https://github.com/SMB-TEC/neo4j-p2-repository)
